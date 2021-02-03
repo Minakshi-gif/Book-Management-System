@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-image: url('https://i.pinimg.com/originals/2d/d9/34/2dd9348391ed435b256c75c0122d8fe1.jpg');
+			background-repeat: no-repeat;
+			width: 100%;
+		}
+		h1{
+			text-align: center;
+			color: red;
+		}
+		h2{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+     <% if current_user %>
+ Logged in as <%= current_user.email %>.
+ <%= link_to 'Log Out', logout_path %>
+<% else %>
+ <h2><%= link_to 'Sign Up', signup_path %> <span>OR</span></h2><br> 
+ <h2><%= link_to 'Log In', login_path %></h2>
+<% end %>
+<p id='notice'><%= notice %></p>
+<h1>Home Page</h1>
+<h1>Welcome Book Library!!!</h1>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background-image: url('https://wallpaperaccess.com/full/731628.jpg');
+		}
+		strong
+		{
+			text-align: center;
+			font-size: 30px;
+			color: red;
+			margin-left: 600px;
+		}
+
+		h1{
+			text-align: center;
+			color: pink;
+			font-size: 40px;
+		}
+		p
+		{
+			font-size: 20px;
+		}
+		button
+		{
+			text-decoration: none;
+			text-underline-position: none;
+			padding: 10px;
+			margin-left: 600px;
+			width: 10%;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+<h1><%= @book.name %></h1>
+
+<p>
+	<strong>Price: </strong> $<%= @book.price  %><br/><br>
+	<strong>Author: </strong> <%= @book.author %><br/><br>
+	<strong>Created Date: </strong> <%= @book.created_at %><br/>
+</p>
+
+<hr/>
+<button><%= link_to "Back", {:action => 'list'} %></button>
+</body>
+</html>

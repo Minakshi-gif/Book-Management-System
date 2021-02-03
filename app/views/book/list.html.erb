@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-image: url('https://c4.wallpaperflare.com/wallpaper/240/555/612/book-book-pages-bookcase-browse-wallpaper-preview.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+    
+<h1>Books List</h1>
+
+<% if @book.blank? %>
+<p>There are not any books currently in the system</p>
+<% else %>
+
+<p>These are the current books in our system</p>
+
+<%= link_to "Back to home",  controller: 'book', action: 'welcome', class: "back-link" %>
+
+<div class="Book Index">
+	<h1><b>Books</b></h1>
+
+
+	<style>
+		table,th,td
+		{
+			border:1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+		th,td
+		{
+			padding:10px;
+		}
+
+	</style>
+
+    
+<%= link_to "Add new Book", controller: 'book', action: 'add', class: "action new" %>
+
+<br>
+<br>
+
+<table class="listing" summary="book List" style="width:50%">
+	<tr class="header">
+		<th>Name</th>
+		<th>Actions</th>
+	</tr>
+
+
+<% @book.each do |c| %>
+<tr class="<%= cycle('odd','even') %>">
+	<td><%= c.name %></td>
+	
+
+	<td class="action">
+		<%= link_to "show", action: 'show', :id => c.id, class: "action show" %>
+		<%= link_to "Edit", action: 'edit', :id => c.id, class: "action edit" %>
+		<%= link_to "Delete", action: 'delete', :id => c.id, class: "action delete" %>
+	</td>
+
+</tr>
+
+<% end %>
+
+</table>
+
+</div >
+
+<% end %>
+</body>
+</html>
+
+
+

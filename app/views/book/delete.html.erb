@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			
+		}
+	</style>
+</head>
+<body>
+     <%= link_to "Back to list", controller: 'book', action: 'list', class: "back-link"  %>
+
+<div class="Book Delete">
+	<h2> Delete Book</h2>
+
+  <%= form_for(:books, url: {action: 'destroy', id: @book.id} ) do |t| %>  	
+  <p>Are you sure you want to delete this book</p>
+  <p class="refernce-name"> <%= @book.name %> </p> 
+
+   <div class="form-buttons">
+   	  <%= submit_tag("Delete Book") %>
+   </div>
+   <% end %>
+
+  </div> 
+</body>
+</html>
+
+
+
+
+
+
+
